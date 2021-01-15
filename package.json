@@ -1,19 +1,16 @@
 {
   "name": "freeservice",
-  "version": "1.0.0",
-  "description": "Free Service or Tools",
-  "main": "app.js",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "node app.js"
+    "start": "node ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gupta197/freeService.git"
-  },
-  "author": "vikas gupta",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/gupta197/freeService/issues"
-  },
-  "homepage": "https://github.com/gupta197/freeService#readme"
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1"
+  }
 }
