@@ -17,4 +17,11 @@ module.exports = {
     },
   },
   fromEmail: process.env.FROM_EMAIL,
+  roles: {
+    SUPERADMIN: 'superAdmin',
+    ADMIN: 'admin',
+    VENDOR: 'vendor',
+    BUYER: 'buyer',
+    TEAMMEMBER: 'teamMember'
+},
 };

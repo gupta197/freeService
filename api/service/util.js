@@ -121,7 +121,7 @@ module.exports = {
       return res.send(csv);
     } catch (err) {
     //   console.log('error', err);
-      commonService.sendCustomResult(req, res, 'SERVER_ERROR', 'COULD_NOT_EXPORT');
+      Util.sendCustomResult(req, res, 'SERVER_ERROR', 'COULD_NOT_EXPORT');
     }
   },
 
@@ -146,14 +146,14 @@ module.exports = {
         stream.on('error', function (err) {
           had_error = true;
         //   console.log('error', err);
-          commonService.sendCustomResult(req, res, 'SERVER_ERROR', 'COULD_NOT_EXPORT');
+          Util.sendCustomResult(req, res, 'SERVER_ERROR', 'COULD_NOT_EXPORT');
         });
         stream.on('close', function () {
           if (!had_error) {
             fs.unlink(dir + '/' + fileName, function (err) {
               if (err) {
                 console.log('error', err);
-                commonService.sendCustomResult(req, res, 'SERVER_ERROR', 'COULD_NOT_EXPORT');
+                Util.sendCustomResult(req, res, 'SERVER_ERROR', 'COULD_NOT_EXPORT');
               }
             });
           }
@@ -161,7 +161,7 @@ module.exports = {
       });
     } catch (err) {
       console.log('error', err);
-      commonService.sendCustomResult(req, res, 'SERVER_ERROR', 'COULD_NOT_EXPORT');
+      Util.sendCustomResult(req, res, 'SERVER_ERROR', 'COULD_NOT_EXPORT');
     }
   },
   copyFile: async (source, destination) => {
